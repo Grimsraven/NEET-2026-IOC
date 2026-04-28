@@ -1,0 +1,1354 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NEET 2026 – Inorganic Chemistry Master Notes</title>
+<link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&family=Nunito:wght@400;600;700;800&family=Fira+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0a0f1e;
+    --card: #111827;
+    --card2: #0f172a;
+    --border: #1e293b;
+    --accent: #38bdf8;
+    --accent2: #818cf8;
+    --accent3: #34d399;
+    --accent4: #fb923c;
+    --accent5: #f472b6;
+    --accent6: #facc15;
+    --text: #e2e8f0;
+    --muted: #94a3b8;
+    --red: #f87171;
+    --glow: 0 0 20px rgba(56,189,248,0.2);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Nunito', sans-serif;
+    font-size: 14px;
+    line-height: 1.6;
+  }
+  /* HEADER */
+  .hero {
+    background: linear-gradient(135deg, #0a0f1e 0%, #0f172a 40%, #162033 100%);
+    border-bottom: 1px solid var(--border);
+    padding: 36px 24px 28px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: -60px; left: 50%; transform: translateX(-50%);
+    width: 600px; height: 200px;
+    background: radial-gradient(ellipse, rgba(56,189,248,0.15) 0%, transparent 70%);
+    pointer-events: none;
+  }
+  .hero-badge {
+    display: inline-block;
+    background: rgba(56,189,248,0.1);
+    border: 1px solid rgba(56,189,248,0.3);
+    color: var(--accent);
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 11px; font-weight: 600; letter-spacing: 3px;
+    padding: 4px 14px; border-radius: 20px; margin-bottom: 12px;
+    text-transform: uppercase;
+  }
+  .hero h1 {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 2.6em; font-weight: 700;
+    background: linear-gradient(90deg, var(--accent), var(--accent2), var(--accent3));
+    -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+    background-clip: text;
+    letter-spacing: 1px;
+  }
+  .hero-sub {
+    color: var(--muted); font-size: 13px; margin-top: 6px;
+    font-weight: 600; letter-spacing: 1px;
+  }
+  .stats-row {
+    display: flex; justify-content: center; gap: 24px; margin-top: 18px; flex-wrap: wrap;
+  }
+  .stat {
+    background: rgba(255,255,255,0.04); border: 1px solid var(--border);
+    padding: 8px 18px; border-radius: 8px; text-align: center;
+  }
+  .stat-num { font-family: 'Rajdhani', sans-serif; font-size: 1.5em; font-weight: 700; color: var(--accent); }
+  .stat-lbl { font-size: 10px; color: var(--muted); letter-spacing: 1px; text-transform: uppercase; }
+
+  /* NAV */
+  .toc {
+    background: var(--card2);
+    border-bottom: 1px solid var(--border);
+    padding: 14px 20px;
+    display: flex; flex-wrap: wrap; gap: 8px; justify-content: center;
+  }
+  .toc a {
+    display: inline-flex; align-items: center; gap: 6px;
+    padding: 5px 12px; border-radius: 6px;
+    font-family: 'Rajdhani', sans-serif; font-weight: 600; font-size: 12px;
+    letter-spacing: 0.5px; text-decoration: none;
+    border: 1px solid var(--border);
+    transition: all 0.2s;
+  }
+  .toc a:hover { transform: translateY(-1px); }
+  .t1 { color: var(--accent); background: rgba(56,189,248,0.07); }
+  .t1:hover { background: rgba(56,189,248,0.18); border-color: var(--accent); }
+  .t2 { color: var(--accent2); background: rgba(129,140,248,0.07); }
+  .t2:hover { background: rgba(129,140,248,0.18); border-color: var(--accent2); }
+  .t3 { color: var(--accent3); background: rgba(52,211,153,0.07); }
+  .t3:hover { background: rgba(52,211,153,0.18); border-color: var(--accent3); }
+  .t4 { color: var(--accent4); background: rgba(251,146,60,0.07); }
+  .t4:hover { background: rgba(251,146,60,0.18); border-color: var(--accent4); }
+  .t5 { color: var(--accent5); background: rgba(244,114,182,0.07); }
+  .t5:hover { background: rgba(244,114,182,0.18); border-color: var(--accent5); }
+  .t6 { color: var(--accent6); background: rgba(250,204,21,0.07); }
+  .t6:hover { background: rgba(250,204,21,0.18); border-color: var(--accent6); }
+
+  /* MAIN LAYOUT */
+  .container { max-width: 1100px; margin: 0 auto; padding: 24px 16px; }
+
+  /* SECTION HEADERS */
+  .sec-header {
+    display: flex; align-items: center; gap: 14px;
+    margin: 40px 0 20px; padding-bottom: 12px;
+    border-bottom: 1px solid var(--border);
+  }
+  .sec-icon {
+    width: 38px; height: 38px; border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 18px; flex-shrink: 0;
+  }
+  .sec-title {
+    font-family: 'Rajdhani', sans-serif;
+    font-size: 1.6em; font-weight: 700; letter-spacing: 0.5px;
+  }
+  .sec-tag {
+    margin-left: auto; font-size: 10px; letter-spacing: 2px;
+    font-family: 'Rajdhani', sans-serif; font-weight: 600; padding: 3px 10px;
+    border-radius: 4px; text-transform: uppercase;
+  }
+
+  /* CARDS */
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 14px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; }
+  .card {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 12px; padding: 16px;
+    position: relative; overflow: hidden;
+  }
+  .card::before {
+    content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+  }
+  .card-b1::before { background: linear-gradient(90deg, var(--accent), transparent); }
+  .card-b2::before { background: linear-gradient(90deg, var(--accent2), transparent); }
+  .card-b3::before { background: linear-gradient(90deg, var(--accent3), transparent); }
+  .card-b4::before { background: linear-gradient(90deg, var(--accent4), transparent); }
+  .card-b5::before { background: linear-gradient(90deg, var(--accent5), transparent); }
+  .card-b6::before { background: linear-gradient(90deg, var(--accent6), transparent); }
+
+  .card-title {
+    font-family: 'Rajdhani', sans-serif; font-size: 1em; font-weight: 700;
+    letter-spacing: 0.5px; margin-bottom: 10px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  ul.notes { list-style: none; padding: 0; }
+  ul.notes li {
+    padding: 4px 0 4px 16px; position: relative;
+    color: var(--text); font-size: 13px; border-bottom: 1px solid rgba(255,255,255,0.03);
+  }
+  ul.notes li:last-child { border-bottom: none; }
+  ul.notes li::before {
+    content: '▸'; position: absolute; left: 0;
+    color: var(--muted); font-size: 10px; top: 6px;
+  }
+
+  /* FORMULA BOXES */
+  .formula {
+    background: rgba(56,189,248,0.07); border: 1px solid rgba(56,189,248,0.2);
+    border-radius: 8px; padding: 8px 12px; margin: 6px 0;
+    font-family: 'Fira Mono', monospace; font-size: 12.5px;
+    color: var(--accent);
+  }
+  .formula2 {
+    background: rgba(129,140,248,0.07); border: 1px solid rgba(129,140,248,0.2);
+    border-radius: 8px; padding: 8px 12px; margin: 6px 0;
+    font-family: 'Fira Mono', monospace; font-size: 12.5px;
+    color: var(--accent2);
+  }
+  .formula3 {
+    background: rgba(52,211,153,0.07); border: 1px solid rgba(52,211,153,0.2);
+    border-radius: 8px; padding: 8px 12px; margin: 6px 0;
+    font-family: 'Fira Mono', monospace; font-size: 12.5px;
+    color: var(--accent3);
+  }
+
+  /* HIGHLIGHT TAGS */
+  .hl { display: inline-block; padding: 1px 7px; border-radius: 4px; font-size: 12px; font-weight: 700; margin: 1px; }
+  .hl-b { background: rgba(56,189,248,0.15); color: var(--accent); }
+  .hl-p { background: rgba(129,140,248,0.15); color: var(--accent2); }
+  .hl-g { background: rgba(52,211,153,0.15); color: var(--accent3); }
+  .hl-o { background: rgba(251,146,60,0.15); color: var(--accent4); }
+  .hl-r { background: rgba(248,113,113,0.15); color: var(--red); }
+  .hl-y { background: rgba(250,204,21,0.15); color: var(--accent6); }
+
+  /* MEMORY AIDS */
+  .memory-box {
+    background: linear-gradient(135deg, rgba(251,146,60,0.08), rgba(244,114,182,0.08));
+    border: 1px solid rgba(251,146,60,0.25); border-radius: 10px;
+    padding: 12px 16px; margin: 10px 0;
+  }
+  .memory-box .mem-title {
+    font-family: 'Rajdhani', sans-serif; font-size: 11px; font-weight: 700;
+    letter-spacing: 2px; color: var(--accent4); text-transform: uppercase; margin-bottom: 6px;
+  }
+  .memory-box p { color: var(--text); font-size: 13px; }
+
+  /* ALERT BOXES */
+  .alert {
+    border-radius: 8px; padding: 10px 14px; margin: 8px 0;
+    font-size: 13px; display: flex; gap: 8px; align-items: flex-start;
+  }
+  .alert-icon { font-size: 14px; flex-shrink: 0; margin-top: 1px; }
+  .alert-warn { background: rgba(250,204,21,0.08); border: 1px solid rgba(250,204,21,0.2); }
+  .alert-warn .alert-icon { color: var(--accent6); }
+  .alert-tip { background: rgba(52,211,153,0.08); border: 1px solid rgba(52,211,153,0.2); }
+  .alert-tip .alert-icon { color: var(--accent3); }
+  .alert-imp { background: rgba(248,113,113,0.08); border: 1px solid rgba(248,113,113,0.2); }
+  .alert-imp .alert-icon { color: var(--red); }
+
+  /* TABLES */
+  .tbl-wrap { overflow-x: auto; margin: 8px 0; border-radius: 8px; }
+  table {
+    width: 100%; border-collapse: collapse;
+    font-size: 12.5px;
+  }
+  th {
+    background: rgba(56,189,248,0.1); color: var(--accent);
+    font-family: 'Rajdhani', sans-serif; font-weight: 600;
+    padding: 8px 10px; text-align: left; letter-spacing: 0.5px;
+    border-bottom: 1px solid rgba(56,189,248,0.2);
+  }
+  td {
+    padding: 7px 10px; border-bottom: 1px solid rgba(255,255,255,0.04);
+    color: var(--text);
+  }
+  tr:last-child td { border-bottom: none; }
+  tr:hover td { background: rgba(255,255,255,0.02); }
+
+  /* ORDER CHAIN */
+  .chain {
+    display: flex; flex-wrap: wrap; align-items: center; gap: 6px;
+    margin: 6px 0; font-family: 'Fira Mono', monospace; font-size: 12px;
+  }
+  .chain-item {
+    padding: 3px 10px; border-radius: 4px;
+    background: rgba(56,189,248,0.1); color: var(--accent);
+    border: 1px solid rgba(56,189,248,0.2);
+  }
+  .chain-sep { color: var(--muted); font-size: 14px; font-weight: 700; }
+
+  /* REACTION BOXES */
+  .rxn {
+    background: rgba(15,23,42,0.8); border: 1px solid var(--border);
+    border-radius: 8px; padding: 10px 14px; margin: 6px 0;
+    font-family: 'Fira Mono', monospace; font-size: 12px;
+    color: var(--text); line-height: 1.7;
+  }
+  .rxn .arrow { color: var(--accent4); font-weight: bold; }
+  .rxn .product { color: var(--accent3); }
+  .rxn .cond { color: var(--muted); font-size: 10px; }
+
+  /* TWO-COL */
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  @media(max-width: 600px) { .two-col { grid-template-columns: 1fr; } }
+
+  /* SPECTROCHEMICAL SERIES */
+  .spec-series {
+    background: var(--card2); border: 1px solid var(--border);
+    border-radius: 10px; padding: 14px;
+    font-family: 'Fira Mono', monospace; font-size: 11px;
+    overflow-x: auto; white-space: nowrap;
+  }
+  .spec-weak { color: var(--red); }
+  .spec-strong { color: var(--accent3); }
+
+  /* SALT ANALYSIS FLOWCHARTS */
+  .flow-group {
+    background: var(--card2); border: 1px solid var(--border);
+    border-radius: 10px; padding: 14px; margin-bottom: 12px;
+  }
+  .flow-group-title {
+    font-family: 'Rajdhani', sans-serif; font-weight: 700; font-size: 13px;
+    margin-bottom: 10px; padding-bottom: 6px;
+    border-bottom: 1px solid var(--border);
+  }
+  .flow-row {
+    display: flex; align-items: flex-start; gap: 10px;
+    padding: 6px 0; border-bottom: 1px solid rgba(255,255,255,0.03);
+    font-size: 12.5px;
+  }
+  .flow-row:last-child { border-bottom: none; }
+  .flow-ion { font-family: 'Fira Mono', monospace; color: var(--accent); min-width: 60px; font-weight: 600; padding-top: 2px; }
+  .flow-reagent { color: var(--accent4); font-family: 'Fira Mono', monospace; min-width: 140px; font-size: 11.5px; }
+  .flow-obs { color: var(--accent3); }
+
+  /* STICKY SUB-HEADER */
+  .sticky-note {
+    position: sticky; top: 0; z-index: 10;
+    background: rgba(10,15,30,0.95); backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--border);
+    padding: 8px 20px; font-size: 11px; color: var(--muted);
+    font-family: 'Rajdhani', sans-serif; font-weight: 600; letter-spacing: 1px;
+    text-align: center; text-transform: uppercase;
+  }
+
+  /* HYDRIDES / TREND TABLES */
+  .trend-card {
+    background: var(--card2); border: 1px solid var(--border);
+    border-radius: 10px; padding: 14px; margin-bottom: 12px;
+  }
+  .trend-title {
+    font-family: 'Rajdhani', sans-serif; font-weight: 700;
+    font-size: 13px; color: var(--accent2); margin-bottom: 10px;
+    letter-spacing: 0.5px;
+  }
+
+  /* PRINT */
+  @media print {
+    body { background: white; color: black; }
+    .card { background: #f8f8f8; border: 1px solid #ddd; }
+    .toc { display: none; }
+    .sticky-note { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-badge">🧪 NEET 2026 Revision</div>
+  <h1>INORGANIC CHEMISTRY</h1>
+  <div class="hero-sub">Complete Master Notes · All Chapters · Score Maximizer</div>
+  <div class="stats-row">
+    <div class="stat"><div class="stat-num">5</div><div class="stat-lbl">Chapters</div></div>
+    <div class="stat"><div class="stat-num">12-16</div><div class="stat-lbl">Qs/paper</div></div>
+    <div class="stat"><div class="stat-num">2 hrs</div><div class="stat-lbl">Revision time</div></div>
+    <div class="stat"><div class="stat-num">100%</div><div class="stat-lbl">NEET-focused</div></div>
+  </div>
+</div>
+
+<div class="toc">
+  <a href="#pt" class="t1">⚛️ Periodic Table</a>
+  <a href="#cb" class="t2">🔗 Chemical Bonding</a>
+  <a href="#cc" class="t3">🧲 Coordination Compounds</a>
+  <a href="#df" class="t4">⚗️ d & f Block</a>
+  <a href="#pb" class="t5">🌡️ p-Block</a>
+  <a href="#sa" class="t6">🔬 Salt Analysis</a>
+</div>
+
+<div class="container">
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<!-- SECTION 1: PERIODIC TABLE -->
+<!-- ═══════════════════════════════════════════════════════ -->
+<div id="pt">
+  <div class="sec-header">
+    <div class="sec-icon" style="background:rgba(56,189,248,0.12); color:var(--accent);">⚛️</div>
+    <div class="sec-title" style="color:var(--accent)">1. PERIODIC TABLE</div>
+    <div class="sec-tag" style="background:rgba(56,189,248,0.1); color:var(--accent); border:1px solid rgba(56,189,248,0.2)">~5 Qs/paper</div>
+  </div>
+
+  <div class="grid">
+    <!-- Zeff -->
+    <div class="card card-b1">
+      <div class="card-title" style="color:var(--accent)">⚡ Effective Nuclear Charge (Z*)</div>
+      <div class="formula">Z* = Z – σ (shielding constant)</div>
+      <ul class="notes">
+        <li>Outer shell electrons → <span class="hl hl-r">shielding = 0</span></li>
+        <li>Same shell electrons → partial shielding</li>
+        <li>Inner shell → full shielding</li>
+        <li><b>s & p block</b> L→R: Z* ↑ by 0.65; T→B: Z* constant</li>
+        <li><b>d block</b> L→R: Z* ↑ by 0.15; T→B: Z* ↑</li>
+        <li><b>f block</b> L→R: Z* constant (Lanthanide Contraction)</li>
+      </ul>
+    </div>
+
+    <!-- Atomic Radius -->
+    <div class="card card-b1">
+      <div class="card-title" style="color:var(--accent)">📏 Atomic Radius Trends</div>
+      <div class="formula">r<sub>vdW</sub> &gt; r<sub>metallic</sub> &gt; r<sub>covalent</sub></div>
+      <ul class="notes">
+        <li><b>Period (L→R):</b> Generally ↓ (Z* ↑)</li>
+        <li><b>Group (T→B):</b> Generally ↑ (n ↑)</li>
+      </ul>
+      <div class="alert alert-warn">
+        <div class="alert-icon">⚠️</div>
+        <div><b>Exceptions Grp 13:</b> B &lt; Al &gt; Ga &lt; In &lt; Tl (Lanthanide contraction effect)<br>
+        <b>Grp 14:</b> C &lt; Si &lt; Ge &lt; Sn ≈ Pb</div>
+      </div>
+      <ul class="notes">
+        <li><b>d-block T→B:</b> Grp 4-12: 3d &lt; 4d ≈ 5d (Lanthanide contraction)</li>
+        <li><b>f-block Metallic:</b> Eu &gt; Ce &gt; Pr... &gt; Lu</li>
+        <li><b>f-block Ionic M³⁺:</b> Ce &gt; Pr... &gt; Lu</li>
+      </ul>
+    </div>
+
+    <!-- Ionisation Energy -->
+    <div class="card card-b1">
+      <div class="card-title" style="color:var(--accent)">⚡ Ionisation Energy (IE)</div>
+      <div class="formula">X(g) → X⁺(g) + e⁻ [always +ve, endothermic]</div>
+      <ul class="notes">
+        <li>IE₁ &lt; IE₂ &lt; IE₃ (successive IE always ↑)</li>
+        <li><b>L→R:</b> Generally ↑ (Z* ↑)</li>
+        <li><b>T→B:</b> Generally ↓ (size ↑)</li>
+        <li><span class="hl hl-g">He = highest IE; Cs = lowest IE</span></li>
+      </ul>
+      <div class="alert alert-warn">
+        <div class="alert-icon">⚠️</div>
+        <div><b>Dip at B vs Be:</b> Be(2s²) &gt; B(2p¹) due to penetration<br>
+        <b>Dip at O vs N:</b> N(2p³ half-filled) &gt; O(2p⁴) due to stability<br>
+        <b>Grp 13 T→B:</b> B &gt; Tl &gt; Ga &gt; Al &gt; In</div>
+      </div>
+      <div class="memory-box">
+        <div class="mem-title">⚡ Jump in successive IE → tells valence electrons</div>
+        <p>ΔIE ≥ 16 eV → lower OS stable | ΔIE ≤ 11 eV → higher OS stable</p>
+      </div>
+    </div>
+
+    <!-- Electron Affinity -->
+    <div class="card card-b1">
+      <div class="card-title" style="color:var(--accent)">📥 Electron Affinity (EA)</div>
+      <div class="formula">ΔH_eg ≈ −EA | X(g) + e⁻ → X⁻(g)</div>
+      <ul class="notes">
+        <li>1st EA mostly <b>exothermic</b> (except Be, Mg, N, Noble gases)</li>
+        <li>2nd EA always <b>endothermic</b> (inter-electron repulsion)</li>
+        <li><b>L→R:</b> Generally ↑ | <b>T→B:</b> Generally ↓</li>
+        <li><span class="hl hl-y">Cl &gt; F</span> (F has small size, high e⁻ repulsion)</li>
+      </ul>
+      <div class="alert alert-warn">
+        <div class="alert-icon">⚠️</div>
+        <div><b>Grp 17:</b> F &lt; Cl &gt; Br &gt; I<br>
+        <b>Grp 16:</b> O &lt; S &gt; Se &gt; Te<br>
+        Halogens have highest EA among all groups</div>
+      </div>
+      <ul class="notes">
+        <li>EA₁ of neutral atom = IE₁ of its anion</li>
+        <li>IE₁ of neutral atom &gt; EA₁ of neutral atom</li>
+      </ul>
+    </div>
+
+    <!-- Electronegativity -->
+    <div class="card card-b1">
+      <div class="card-title" style="color:var(--accent)">🧲 Electronegativity (EN)</div>
+      <div class="formula">% Ionic character = 16(ΔEN) + 3.5(ΔEN)²</div>
+      <div class="formula">d(A-B) = rA + rB – 0.09(ΔEN) [Schomaker-Stevenson]</div>
+      <ul class="notes">
+        <li><span class="hl hl-g">F = 4.0 (highest) | Cs = 0.7 (lowest)</span></li>
+        <li><b>L→R:</b> ↑ | <b>T→B:</b> ↓</li>
+        <li>OS ↑ → EN of atom ↑ (Mn &lt; Mn²⁺ &lt; Mn⁷⁺)</li>
+        <li>% s-character ↑ → EN ↑ (sp³ &lt; sp² &lt; sp)</li>
+      </ul>
+      <div class="alert alert-tip">
+        <div class="alert-icon">💡</div>
+        <div>Acid strength of hydra-acids: L→R ↑ EN; T→B ↑ Size<br>
+        Acid strength of oxyacids: ↑ OS of same central atom → ↑ acid strength</div>
+      </div>
+    </div>
+
+    <!-- Oxides -->
+    <div class="card card-b1">
+      <div class="card-title" style="color:var(--accent)">🔥 Types of Oxides</div>
+      <ul class="notes">
+        <li><span class="hl hl-r">Acidic:</span> CO₂, N₂O₅, SO₃, B₂O₃, P₄O₁₀</li>
+        <li><span class="hl hl-g">Basic:</span> Li₂O, Na₂O, MgO, CaO, SrO</li>
+        <li><span class="hl hl-b">Neutral:</span> CO, N₂O, NO, H₂O</li>
+        <li><span class="hl hl-p">Amphoteric:</span> ZnO, BeO, Al₂O₃, Ga₂O₃, MnO₂, SnO, Cr₂O₃, V₂O₅, PbO, PbO₂</li>
+      </ul>
+      <div class="alert alert-warn">
+        <div class="alert-icon">⚠️</div>
+        <div>Acidic nature of oxides: Acidic &gt; Amphoteric &gt; Basic<br>
+        Acidic nature ∝ OS of element (same element)</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Ionic Radius Important Orders -->
+  <div class="card card-b1" style="margin-top:14px">
+    <div class="card-title" style="color:var(--accent)">📊 Must-Know Size & IE Orders</div>
+    <div class="two-col">
+      <div>
+        <div class="trend-title">Isoelectronic Size</div>
+        <div class="chain"><span class="chain-item">Ca²⁺</span><span class="chain-sep">&lt;</span><span class="chain-item">K⁺</span><span class="chain-sep">&lt;</span><span class="chain-item">Cl⁻</span><span class="chain-sep">&lt;</span><span class="chain-item">S²⁻</span></div>
+        <div class="chain"><span class="chain-item">C⁴⁻</span><span class="chain-sep">&gt;</span><span class="chain-item">N³⁻</span><span class="chain-sep">&gt;</span><span class="chain-item">O²⁻</span><span class="chain-sep">&gt;</span><span class="chain-item">F⁻</span></div>
+        <div class="trend-title" style="margin-top:10px">Ionic Size: Halides</div>
+        <div class="chain"><span class="chain-item">F⁻</span><span class="chain-sep">&lt;</span><span class="chain-item">Cl⁻</span><span class="chain-sep">&lt;</span><span class="chain-item">Br⁻</span><span class="chain-sep">&lt;</span><span class="chain-item">H⁻</span><span class="chain-sep">&lt;</span><span class="chain-item">I⁻</span></div>
+      </div>
+      <div>
+        <div class="trend-title">Acid Strength of HX</div>
+        <div class="chain"><span class="chain-item">HF</span><span class="chain-sep">&lt;</span><span class="chain-item">HCl</span><span class="chain-sep">&lt;</span><span class="chain-item">HBr</span><span class="chain-sep">&lt;</span><span class="chain-item">HI</span></div>
+        <div class="trend-title" style="margin-top:10px">EA of Halogens</div>
+        <div class="chain"><span class="chain-item">F</span><span class="chain-sep">&lt;</span><span class="chain-item">Cl</span><span class="chain-sep">&gt;</span><span class="chain-item">Br</span><span class="chain-sep">&gt;</span><span class="chain-item">I</span></div>
+        <div class="trend-title" style="margin-top:10px">Basic nature Li→Cs</div>
+        <div class="chain"><span class="chain-item">Li</span><span class="chain-sep">&lt;</span><span class="chain-item">Na</span><span class="chain-sep">&lt;</span><span class="chain-item">K</span><span class="chain-sep">&lt;</span><span class="chain-item">Rb</span><span class="chain-sep">&lt;</span><span class="chain-item">Cs</span></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<!-- SECTION 2: CHEMICAL BONDING -->
+<!-- ═══════════════════════════════════════════════════════ -->
+<div id="cb">
+  <div class="sec-header">
+    <div class="sec-icon" style="background:rgba(129,140,248,0.12); color:var(--accent2);">🔗</div>
+    <div class="sec-title" style="color:var(--accent2)">2. CHEMICAL BONDING</div>
+    <div class="sec-tag" style="background:rgba(129,140,248,0.1); color:var(--accent2); border:1px solid rgba(129,140,248,0.2)">~4 Qs/paper</div>
+  </div>
+
+  <div class="grid">
+    <!-- Hybridisation Table -->
+    <div class="card card-b2" style="grid-column: span 2;">
+      <div class="card-title" style="color:var(--accent2)">🧬 Hybridisation → Shape → Examples (MOST IMPORTANT)</div>
+      <div class="tbl-wrap">
+        <table>
+          <tr><th>SN</th><th>Hybrid</th><th>BP</th><th>LP</th><th>Shape</th><th>Examples</th></tr>
+          <tr><td>2</td><td>sp</td><td>2</td><td>0</td><td>Linear (180°)</td><td>BeF₂, CO₂, CS₂, BeCl₂</td></tr>
+          <tr><td>3</td><td>sp²</td><td>3</td><td>0</td><td>Trigonal Planar (120°)</td><td>BF₃, AlCl₃, SO₃</td></tr>
+          <tr><td>3</td><td>sp²</td><td>2</td><td>1</td><td>V-shape / Bent</td><td>NO₂⁻, SO₂, O₃, SnCl₂</td></tr>
+          <tr><td>4</td><td>sp³</td><td>4</td><td>0</td><td>Tetrahedral (109.5°)</td><td>CH₄, CCl₄, SO₄²⁻, NH₄⁺, BF₄⁻</td></tr>
+          <tr><td>4</td><td>sp³</td><td>3</td><td>1</td><td>Pyramidal (~107°)</td><td>NH₃, PCl₃, H₃O⁺, XeO₃</td></tr>
+          <tr><td>4</td><td>sp³</td><td>2</td><td>2</td><td>V-shape (~104.5°)</td><td>H₂O, OF₂, SF₂, NH₂⁻</td></tr>
+          <tr><td>4</td><td>dsp²</td><td>4</td><td>0</td><td>Square Planar (90°)</td><td>[Ni(CN)₄]²⁻, XeF₄</td></tr>
+          <tr><td>5</td><td>sp³d</td><td>5</td><td>0</td><td>Trigonal Bipyramidal</td><td>PCl₅, AsF₅, SOF₄</td></tr>
+          <tr><td>5</td><td>sp³d</td><td>4</td><td>1</td><td>See-Saw</td><td>SF₄, XeO₂F₂, PF₄⁻</td></tr>
+          <tr><td>5</td><td>sp³d</td><td>3</td><td>2</td><td>T-shape</td><td>ClF₃, ICl₃</td></tr>
+          <tr><td>5</td><td>sp³d</td><td>2</td><td>3</td><td>Linear</td><td>I₃⁻, XeF₂, ICl₂⁻</td></tr>
+          <tr><td>6</td><td>sp³d²/d²sp³</td><td>6</td><td>0</td><td>Octahedral (90°)</td><td>SF₆, PCl₆⁻</td></tr>
+          <tr><td>6</td><td>sp³d²</td><td>5</td><td>1</td><td>Square Pyramidal</td><td>ClF₅, BrF₅, XeOF₄</td></tr>
+          <tr><td>6</td><td>sp³d²</td><td>4</td><td>2</td><td>Square Planar</td><td>XeF₄, ICl₄⁻</td></tr>
+          <tr><td>7</td><td>sp³d³</td><td>7</td><td>0</td><td>Pentagonal Bipyramidal</td><td>IF₇</td></tr>
+          <tr><td>7</td><td>sp³d³</td><td>6</td><td>1</td><td>Distorted Octahedral</td><td>XeF₆</td></tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div class="grid" style="margin-top:14px">
+    <!-- VSEPR -->
+    <div class="card card-b2">
+      <div class="card-title" style="color:var(--accent2)">🔄 VSEPR Rules</div>
+      <ul class="notes">
+        <li><b>Repulsion order:</b> LP-LP &gt; LP-SB &gt; SB-SB</li>
+        <li>Also: DB-DB &gt; DB-SB &gt; SB-SB</li>
+        <li>LP compresses adjacent bond angles by ~2.5° each</li>
+      </ul>
+      <div class="alert alert-tip">
+        <div class="alert-icon">💡</div>
+        <div><b>Bent's Rule:</b> LP occupies positions of highest p-character (equatorial in sp³d). More EN atoms → axial positions in sp³d</div>
+      </div>
+      <div class="alert alert-warn">
+        <div class="alert-icon">⚠️</div>
+        <div><b>Drago's Rule:</b> 3rd period+ central atom with LP + SA of EN &lt; 3 → no hybridisation → bond angle ≈ 90°<br>
+        PH₃, H₂S, AsH₃, H₂Se etc.</div>
+      </div>
+    </div>
+
+    <!-- Bond Parameters -->
+    <div class="card card-b2">
+      <div class="card-title" style="color:var(--accent2)">📐 Bond Parameters</div>
+      <ul class="notes">
+        <li><b>Bond Order ↑ → BE ↑, BL ↓</b></li>
+        <li><b>% s-character:</b> sp(50%) &gt; sp²(33%) &gt; sp³(25%)</li>
+        <li><b>Bond Length:</b> sp &lt; sp² &lt; sp³</li>
+        <li><b>2nd period single bonds:</b> BE ∝ 1/No. of lone pairs on bonded atoms</li>
+        <li><span class="hl hl-r">F-F &lt; Cl-Cl</span> (F has more LP repulsion)</li>
+      </ul>
+      <div class="alert alert-tip">
+        <div class="alert-icon">💡</div>
+        <div><b>Bond Angle order:</b><br>
+        NH₃ &gt; PH₃ &gt; AsH₃ &gt; SbH₃<br>
+        H₂O &gt; H₂S &gt; H₂Se &gt; H₂Te<br>
+        NF₃ &lt; NH₃ (F withdraws e⁻ → compresses)</div>
+      </div>
+    </div>
+
+    <!-- Dipole Moment -->
+    <div class="card card-b2">
+      <div class="card-title" style="color:var(--accent2)">🧲 Dipole Moment (μ)</div>
+      <div class="formula2">μ = q × d (Debye) | 1D = 3.33×10⁻³⁰ C·m</div>
+      <ul class="notes">
+        <li>Direction: less EN → more EN atom (δ+ → δ−)</li>
+        <li>LP moment: always away from nucleus</li>
+        <li>Regular (symmetrical) structures → μ = 0 (non-polar)</li>
+      </ul>
+      <div class="alert alert-warn">
+        <div class="alert-icon">⚠️</div>
+        <div><b>Key orders:</b><br>
+        NH₃ &gt; NF₃ (LP & bond moments cancel in NF₃)<br>
+        H₂O &gt; H₂O₂<br>
+        CHCl₃ &gt; CH₂Cl₂ &gt; CH₃Cl &gt; CCl₄ = CH₄ = 0<br>
+        H₂O &gt; HF &gt; NH₃</div>
+      </div>
+    </div>
+
+    <!-- MOT -->
+    <div class="card card-b2">
+      <div class="card-title" style="color:var(--accent2)">🌀 MOT – Bond Orders</div>
+      <div class="formula2">BO = (Nb − Na) / 2</div>
+      <div class="tbl-wrap">
+        <table>
+          <tr><th>Species</th><th>Electrons</th><th>BO</th><th>Magnetic</th></tr>
+          <tr><td>H₂⁺</td><td>1</td><td>0.5</td><td>Para</td></tr>
+          <tr><td>H₂</td><td>2</td><td>1</td><td>Dia</td></tr>
+          <tr><td>He₂⁺</td><td>3</td><td>0.5</td><td>Para</td></tr>
+          <tr><td>He₂</td><td>4</td><td>0</td><td>—</td></tr>
+          <tr><td>O₂</td><td>16</td><td>2</td><td>Para</td></tr>
+          <tr><td>N₂</td><td>14</td><td>3</td><td>Dia</td></tr>
+          <tr><td>F₂</td><td>18</td><td>1</td><td>Dia</td></tr>
+          <tr><td>O₂²⁻</td><td>18</td><td>1</td><td>Dia</td></tr>
+        </table>
+      </div>
+      <ul class="notes">
+        <li>s-p mixing: Li₂ to N₂ | No mixing: O₂, F₂, Ne₂</li>
+        <li>With s-p mixing: σ2p has MORE energy than π2p</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Hydrogen Bond -->
+  <div class="card card-b2" style="margin-top:14px">
+    <div class="card-title" style="color:var(--accent2)">💧 Hydrogen Bond & van der Waals Forces</div>
+    <div class="two-col">
+      <div>
+        <ul class="notes">
+          <li>X−H···Y (X, Y = F, O, N)</li>
+          <li><b>Intermolecular H-bond:</b> ↑ BP, MP, viscosity, surface tension, enthalpy of vaporisation; ↓ vapour pressure</li>
+          <li><b>Intramolecular H-bond:</b> forms chelate ring (5 or 6 membered); ↑ volatile nature; ↓ BP vs intermolecular</li>
+          <li>o-nitrophenol (intra) → lower BP than p-nitrophenol (inter)</li>
+        </ul>
+      </div>
+      <div>
+        <ul class="notes">
+          <li><b>H-bond strength order:</b> HF···HF &gt; H₂O···H₂O &gt; NH₃···NH₃</li>
+          <li><b>VWF ∝</b> Size, Mol. mass, Surface area</li>
+          <li>London forces: non-polar + non-polar</li>
+          <li>ICl &gt; Br₂ (despite same electrons – ICl has dipole)</li>
+        </ul>
+        <div class="alert alert-imp">
+          <div class="alert-icon">🔴</div>
+          <div>BP: HF &lt; H₂O &gt; H₂S (H₂O has strong H-bond network)</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Fajan's Rule -->
+  <div class="card card-b2" style="margin-top:14px">
+    <div class="card-title" style="color:var(--accent2)">⚡ Fajan's Rule – Polarisation</div>
+    <div class="two-col">
+      <div>
+        <ul class="notes">
+          <li><b>Polarising Power (cation) ↑ if:</b> Charge ↑, Size ↓, Pseudo-inert gas &gt; Inert pair &gt; Inert gas config</li>
+          <li><b>Polarisability (anion) ↑ if:</b> Charge ↑ (−ve), Size ↑</li>
+          <li>High polarisation → more covalent character</li>
+        </ul>
+      </div>
+      <div>
+        <div class="formula2">Pseudo-inert gas (18e⁻) &gt; Inert pair (18+2) &gt; Inert gas (8e⁻)</div>
+        <ul class="notes">
+          <li>NaF &lt; MgF₂ &lt; AlF₃ (MP increases as covalent character ↑)</li>
+          <li>NaCl &gt; MgCl₂ &gt; AlCl₃ (MP decreases)</li>
+          <li>Covalent solid &gt; Ionic solid &gt; Molecular solid (MP)</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Solid State Hybridisation -->
+  <div class="card card-b2" style="margin-top:14px">
+    <div class="card-title" style="color:var(--accent2)">🧊 Hybridisation Change in Solid/Ionic State</div>
+    <div class="grid-3">
+      <div class="rxn">PCl₅(g) → sp³d<br>PCl₅(s) → [PCl₄]⁺ + [PCl₆]⁻ (sp³ + sp³d²)</div>
+      <div class="rxn">N₂O₅(s) → [NO₂]⁺ + [NO₃]⁻<br>XeF₆(s) → [XeF₅]⁺ + F⁻</div>
+      <div class="rxn">I₂(s) → I₃⁺ + I₃⁻<br>N₂O₃(s) → NO⁺ + NO₂⁻<br>N₂O₄(s) → NO⁺ + NO₃⁻</div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<!-- SECTION 3: COORDINATION COMPOUNDS -->
+<!-- ═══════════════════════════════════════════════════════ -->
+<div id="cc">
+  <div class="sec-header">
+    <div class="sec-icon" style="background:rgba(52,211,153,0.12); color:var(--accent3);">🧲</div>
+    <div class="sec-title" style="color:var(--accent3)">3. COORDINATION COMPOUNDS</div>
+    <div class="sec-tag" style="background:rgba(52,211,153,0.1); color:var(--accent3); border:1px solid rgba(52,211,153,0.2)">~3 Qs/paper</div>
+  </div>
+
+  <div class="grid">
+    <div class="card card-b3">
+      <div class="card-title" style="color:var(--accent3)">🧬 Ligands</div>
+      <ul class="notes">
+        <li><b>Monodentate:</b> F⁻, Cl⁻, NH₃, H₂O, CO, CN⁻, NC⁻, NO⁺</li>
+        <li><b>Bidentate:</b> en (ethylenediamine), ox²⁻, bipy, gly⁻, acac⁻</li>
+        <li><b>Tridentate:</b> dien</li>
+        <li><b>Hexadentate:</b> EDTA⁴⁻</li>
+        <li><b>Ambidentate:</b> CN⁻/NC⁻, SCN⁻/NCS⁻, NO₂⁻/ONO⁻</li>
+        <li>No. of Chelate Rings = (denticity − 1); Stability ∝ rings</li>
+      </ul>
+      <div class="alert alert-tip">
+        <div class="alert-icon">💡</div>
+        <div>Linkage isomers for ambidentate ligand with n atoms = n+1</div>
+      </div>
+    </div>
+
+    <div class="card card-b3">
+      <div class="card-title" style="color:var(--accent3)">⚗️ Spectrochemical Series</div>
+      <div class="spec-series">
+        <span class="spec-weak">I⁻ &lt; Br⁻ &lt; SCN⁻ &lt; Cl⁻ &lt; S²⁻ &lt; NO₃⁻ &lt; F⁻ &lt; OH⁻ &lt; C₂O₄²⁻ &lt; H₂O</span><br>
+        &lt; NCS⁻ &lt; EDTA⁴⁻ &lt; NH₃ &lt; py &lt; en &lt; NO₂⁻ &lt; <span class="spec-strong">CN⁻ &lt; CO</span>
+      </div>
+      <ul class="notes">
+        <li><b>C-donor &gt; N-donor &gt; O-donor &gt; X-donor</b></li>
+        <li>WFL → High spin, sp³d² (outer orbital), paramagnetic</li>
+        <li>SFL → Low spin, d²sp³ (inner orbital), may be diamagnetic</li>
+      </ul>
+    </div>
+
+    <div class="card card-b3">
+      <div class="card-title" style="color:var(--accent3)">⚡ VBT Special Cases</div>
+      <ul class="notes">
+        <li>OS ≥ +4 → ALL ligands act as SFL (e.g., [NiF₆]²⁻)</li>
+        <li>4d, 5d metals → ALL ligands act as SFL (Pt²⁺/Pd²⁺ CN=4 → always square planar)</li>
+        <li>Co³⁺ with H₂O, C₂O₄²⁻ → behaves as SFL</li>
+        <li>Fe²⁺, Mn²⁺ with NH₃ → WFL</li>
+        <li>Cu²⁺ with H₂O → SFL → dsp² (square planar)</li>
+        <li><b>CN=6 rule:</b> d¹⁻³ always d²sp³; d⁸⁻¹⁰ always sp³d²</li>
+        <li><b>CN=4 rule:</b> d¹⁰ always sp³; d⁷⁻⁹ → sp³(WFL) or dsp²(SFL)</li>
+      </ul>
+    </div>
+
+    <div class="card card-b3">
+      <div class="card-title" style="color:var(--accent3)">🌈 CFT & Colour</div>
+      <ul class="notes">
+        <li>Octahedral: eg(dx²-y², dz²) &gt; t₂g(dxy, dyz, dxz)</li>
+        <li>Tetrahedral: e(dx²-y², dz²) &lt; t₂(dxy, dyz, dxz)</li>
+        <li>Δ_oct &gt; Δ_sp &gt; Δ_tet (4/9 × Δ_oct)</li>
+        <li>SE ∝ Ligand strength, OS of CMI, Zeff (3d &lt; 4d &lt; 5d)</li>
+        <li>Colour absorbed & shown are <b>complementary</b></li>
+      </ul>
+      <div class="alert alert-warn">
+        <div class="alert-icon">⚠️</div>
+        <div>[Ti(H₂O)₆]³⁺ → Violet | [Cu(H₂O)₄]²⁺ → Blue<br>
+        MnO₄⁻ → Deep Purple (charge transfer) | CrO₄²⁻ → Yellow<br>
+        Prussian Blue = Fe₄[Fe(CN)₆]₃ | Turnbull's Blue = Fe₃[Fe(CN)₆]₂<br>
+        Brown Ring = [Fe(H₂O)₅NO]SO₄</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- IUPAC Names -->
+  <div class="card card-b3" style="margin-top:14px">
+    <div class="card-title" style="color:var(--accent3)">📛 Important IUPAC Names</div>
+    <div class="tbl-wrap">
+      <table>
+        <tr><th>Formula</th><th>Name</th><th>OS</th><th>CN</th></tr>
+        <tr><td>K₄[Fe(CN)₆]</td><td>Potassium hexacyanoferrate(II)</td><td>+2</td><td>6</td></tr>
+        <tr><td>K₃[Fe(CN)₆]</td><td>Potassium hexacyanoferrate(III)</td><td>+3</td><td>6</td></tr>
+        <tr><td>[Cu(NH₃)₄]SO₄</td><td>Tetraamminecopper(II) sulphate (Schweitzer's salt)</td><td>+2</td><td>4</td></tr>
+        <tr><td>[Ni(CO)₄]</td><td>Tetracarbonylnickel(0) – Mond's process</td><td>0</td><td>4</td></tr>
+        <tr><td>[Ni(CN)₄]²⁻</td><td>Tetracyanidonickelate(II) – square planar</td><td>+2</td><td>4</td></tr>
+        <tr><td>[Co(NH₃)₆]Cl₃</td><td>Hexaamminecobalt(III) chloride</td><td>+3</td><td>6</td></tr>
+        <tr><td>[Cr(NH₃)₄Cl₂]Cl</td><td>Tetraaminedichloridochromium(III) chloride</td><td>+3</td><td>6</td></tr>
+        <tr><td>[Co(en)₃]Cl₃</td><td>Tris(ethylenediamine)cobalt(III) chloride</td><td>+3</td><td>6</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- Applications -->
+  <div class="card card-b3" style="margin-top:14px">
+    <div class="card-title" style="color:var(--accent3)">🏭 Applications of Coordination Compounds</div>
+    <div class="grid-3">
+      <ul class="notes">
+        <li><span class="hl hl-g">Wilkinson catalyst</span> = [RhCl(PPh₃)₃] → hydrogenation</li>
+        <li><span class="hl hl-g">Mond's process</span> = [Ni(CO)₄] → purify Ni</li>
+        <li><span class="hl hl-g">Cyanide process</span> = [Ag(CN)₂]⁻, [Au(CN)₂]⁻ → purify metals</li>
+      </ul>
+      <ul class="notes">
+        <li><span class="hl hl-b">Nessler's reagent</span> = K₂[HgI₄]+KOH → test NH₄⁺</li>
+        <li><span class="hl hl-b">Tollen's reagent</span> = [Ag(NH₃)₂]⁺ → test aldehyde</li>
+        <li><span class="hl hl-b">EDTA⁴⁻</span> → hardness of water, removes Pb poisoning</li>
+      </ul>
+      <ul class="notes">
+        <li><span class="hl hl-y">Chlorophyll</span> = Mg | <span class="hl hl-y">Haemoglobin</span> = Fe²⁺</li>
+        <li><span class="hl hl-y">Vitamin B₁₂</span> = Co | <span class="hl hl-y">Insulin/Carboxypeptidase</span> = Zn</li>
+        <li>Zeise's salt = K[PtCl₃(η²-C₂H₄)]</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Isomerism -->
+  <div class="card card-b3" style="margin-top:14px">
+    <div class="card-title" style="color:var(--accent3)">🔄 Isomerism Quick Table</div>
+    <div class="two-col">
+      <div>
+        <ul class="notes">
+          <li><b>Ionisation:</b> Exchange of outer anion ↔ inner anion<br>[Co(NH₃)₅Cl]SO₄ ↔ [Co(NH₃)₅SO₄]Cl</li>
+          <li><b>Hydrate/Solvate:</b> H₂O inside ↔ outside coordination sphere<br>[Co(H₂O)₆]Cl₃ ↔ [Co(H₂O)₅Cl]Cl₂·H₂O</li>
+          <li><b>Linkage:</b> Ambidentate ligand; isomers = n+1</li>
+          <li><b>Coordination:</b> Exchange of ligands between cationic & anionic complex spheres</li>
+        </ul>
+      </div>
+      <div>
+        <div class="trend-card">
+          <div class="trend-title">GI & OI Quick Count</div>
+          <ul class="notes">
+            <li>Ma₄, Ma₅b, Ma₃b₃(mer/fac), Ma₄b₂(cis/trans) → NEET favourites</li>
+            <li>M(AA)₃ → 2 OI (Δ/Λ)</li>
+            <li>M(AA)₂b₂ → 2 GI, 2 OI, total 3</li>
+            <li>Tetrahedral: NO GI, NO OI generally (Ma₂b₂: 2 GI)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<!-- SECTION 4: d & f BLOCK -->
+<!-- ═══════════════════════════════════════════════════════ -->
+<div id="df">
+  <div class="sec-header">
+    <div class="sec-icon" style="background:rgba(251,146,60,0.12); color:var(--accent4);">⚗️</div>
+    <div class="sec-title" style="color:var(--accent4)">4. d & f BLOCK ELEMENTS</div>
+    <div class="sec-tag" style="background:rgba(251,146,60,0.1); color:var(--accent4); border:1px solid rgba(251,146,60,0.2)">~3 Qs/paper</div>
+  </div>
+
+  <div class="grid">
+    <div class="card card-b4">
+      <div class="card-title" style="color:var(--accent4)">⚡ Electronic Configuration Exceptions</div>
+      <ul class="notes">
+        <li>Cr = [Ar] 3d⁵ 4s¹ (half-filled stability)</li>
+        <li>Cu = [Ar] 3d¹⁰ 4s¹ (fully-filled stability)</li>
+        <li>All d-block: EC = (n-1)d¹⁻¹⁰ ns¹⁻²</li>
+        <li>Transition elements ≠ Zn, Cd, Hg, Cn (d¹⁰ in both atom & ions)</li>
+        <li>On ionisation: ns removed before (n-1)d</li>
+      </ul>
+    </div>
+
+    <div class="card card-b4">
+      <div class="card-title" style="color:var(--accent4)">🌡️ Physical Properties</div>
+      <ul class="notes">
+        <li><b>MP:</b> Cr, Mo, W = highest in their series (max unpaired e⁻)</li>
+        <li><b>MP:</b> Zn, Cd, Hg = lowest in their series (d¹⁰, no metallic bonding)</li>
+        <li><b>MP:</b> Mn, Tc = comparatively low</li>
+        <li><b>Size T→B:</b> 3d &lt; 4d ≈ 5d (lanthanide contraction)</li>
+        <li><b>Density L→R:</b> Sc &lt; Ti &lt; V ... Ni ≈ Cu &gt; Zn</li>
+        <li><b>Max enthalpy of atomisation:</b> V in 3d series</li>
+      </ul>
+    </div>
+
+    <div class="card card-b4">
+      <div class="card-title" style="color:var(--accent4)">🎨 Colour of Hydrated Ions</div>
+      <div class="tbl-wrap">
+        <table>
+          <tr><th>Ion</th><th>Colour</th><th>d-config</th></tr>
+          <tr><td>Ti³⁺</td><td>Purple</td><td>d¹</td></tr>
+          <tr><td>Cr³⁺</td><td>Violet/Green</td><td>d³</td></tr>
+          <tr><td>Mn²⁺</td><td>Light Pink</td><td>d⁵</td></tr>
+          <tr><td>Fe²⁺</td><td>Green</td><td>d⁶</td></tr>
+          <tr><td>Fe³⁺</td><td>Yellow</td><td>d⁵</td></tr>
+          <tr><td>Co²⁺</td><td>Pink</td><td>d⁷</td></tr>
+          <tr><td>Ni²⁺</td><td>Green</td><td>d⁸</td></tr>
+          <tr><td>Cu²⁺</td><td>Blue</td><td>d⁹</td></tr>
+          <tr><td>Zn²⁺, Sc³⁺, Ti⁴⁺</td><td>Colourless</td><td>d¹⁰, d⁰</td></tr>
+        </table>
+      </div>
+    </div>
+
+    <div class="card card-b4">
+      <div class="card-title" style="color:var(--accent4)">📊 E° Values – Key Data</div>
+      <ul class="notes">
+        <li>Cu has most +ve E°(M²⁺/M) = +0.34V (unlike other d-block)</li>
+        <li>Mn, Ni, Zn have more -ve E° than expected</li>
+        <li>E°(M³⁺/M²⁺): most +ve for Co (+1.97V)</li>
+        <li>Cr, Fe: more -ve E°(M³⁺/M²⁺) than expected</li>
+        <li>If E°(M³⁺/M²⁺) &gt; 0 → M³⁺ unstable → M²⁺ stable (Mn³⁺, Co³⁺)</li>
+        <li>If E°(M³⁺/M²⁺) &lt; 0 → M³⁺ stable (Cr³⁺, Fe³⁺)</li>
+      </ul>
+      <div class="alert alert-imp">
+        <div class="alert-icon">🔴</div>
+        <div>Cu⁺ disproportionates in aq. medium: 2Cu⁺ → Cu²⁺ + Cu</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- KMnO4 and K2Cr2O7 -->
+  <div class="card card-b4" style="margin-top:14px">
+    <div class="card-title" style="color:var(--accent4)">⚗️ KMnO₄ vs K₂Cr₂O₇ – Complete Comparison</div>
+    <div class="two-col">
+      <div>
+        <div class="formula" style="background:rgba(139,92,246,0.1); border-color:rgba(139,92,246,0.3); color:#a78bfa;">🟣 KMnO₄ (Purple, Mn⁺⁷, Tetrahedral)</div>
+        <ul class="notes">
+          <li>Preparation: MnO₂ + KOH + O₂ → K₂MnO₄ → KMnO₄</li>
+          <li>K₂MnO₄ (green) stable only in strongly basic medium; disproportionates in acid/neutral</li>
+          <li><b>In acid (H⁺):</b> → Mn²⁺ (colourless) | <b>In neutral:</b> → MnO₂ | <b>In strong base:</b> → MnO₄²⁻</li>
+          <li>Auto-catalyst for oxalic acid titration</li>
+          <li>Acidify only with dil. H₂SO₄ (not HCl, not conc. H₂SO₄)</li>
+          <li>2KMnO₄ + conc. H₂SO₄ → Mn₂O₇ (explosive green oil)</li>
+          <li>Diamagnetic; 3 p-d bonds; ON of Mn = +7</li>
+        </ul>
+      </div>
+      <div>
+        <div class="formula" style="background:rgba(234,88,12,0.1); border-color:rgba(234,88,12,0.3); color:#fb923c;">🟠 K₂Cr₂O₇ (Orange, Cr⁺⁶, Tetrahedral in CrO₄²⁻)</div>
+        <ul class="notes">
+          <li>Preparation: FeCr₂O₄ + Na₂CO₃ + O₂ → Na₂CrO₄ → Na₂Cr₂O₇ → K₂Cr₂O₇</li>
+          <li><b>pH conversion:</b> CrO₄²⁻ (yellow, OH⁻) ↔ Cr₂O₇²⁻ (orange, H⁺)</li>
+          <li><b>Oxidising agent in acid only</b> → Cr³⁺ (green)</li>
+          <li>ON of KMnO₄ &gt; K₂Cr₂O₇ (stronger OA: KMnO₄)</li>
+          <li>K₂Cr₂O₇ used in analysis (not Na₂Cr₂O₇ – hygroscopic)</li>
+          <li>K₂Cr₂O₇ + H₂O₂ + H₂SO₄ → CrO₅ (blue) [only stable in organic solvent]</li>
+          <li><b>Chromyl chloride test:</b> Cl⁻ + K₂Cr₂O₇ + conc. H₂SO₄ → CrO₂Cl₂ (reddish-orange)</li>
+          <li>4 p-d bonds; Diamagnetic</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Oxidation reactions -->
+    <div class="tbl-wrap" style="margin-top:12px">
+      <table>
+        <tr><th>Substrate</th><th>KMnO₄/H⁺ Product</th><th>K₂Cr₂O₇/H⁺ Product</th></tr>
+        <tr><td>H₂S</td><td>S</td><td>S</td></tr>
+        <tr><td>SO₂</td><td>SO₄²⁻</td><td>SO₄²⁻</td></tr>
+        <tr><td>NO₂⁻</td><td>NO₃⁻</td><td>NO₃⁻</td></tr>
+        <tr><td>Fe²⁺</td><td>Fe³⁺</td><td>Fe³⁺</td></tr>
+        <tr><td>Br⁻/I⁻/Cl⁻</td><td>Br₂/I₂/Cl₂</td><td>Br₂/I₂/Cl₂</td></tr>
+        <tr><td>C₂H₅OH</td><td>CH₃COOH</td><td>CH₃COOH</td></tr>
+        <tr><td>I⁻</td><td>IO₃⁻</td><td>–</td></tr>
+        <tr><td>Mn²⁺</td><td>MnO₂ (basic only)</td><td>–</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- f block -->
+  <div class="card card-b4" style="margin-top:14px">
+    <div class="card-title" style="color:var(--accent4)">☢️ f-Block (Lanthanoids & Actinoids)</div>
+    <div class="two-col">
+      <div>
+        <div class="formula3">Lanthanoids: At.No. 58-71 | EC: 4f¹⁻¹⁴ 5d⁰⁻¹ 6s²</div>
+        <ul class="notes">
+          <li>Most stable OS = +3 for all</li>
+          <li>+4 → good OA (Ce⁴⁺, Tb⁴⁺) | +2 → good RA (Eu²⁺, Yb²⁺)</li>
+          <li>Only Pm is radioactive</li>
+          <li>Colour: f-f transition; 4fⁿ ↔ 4f¹⁴⁻ⁿ have similar colour</li>
+          <li>Mischmetall = alloy of Lanthanoids (mainly Ce) + Fe</li>
+          <li>Basic nature: La(OH)₃ &gt; Ce(OH)₃ &gt; ... &gt; Lu(OH)₃</li>
+        </ul>
+      </div>
+      <div>
+        <div class="formula3">Actinoids: At.No. 90-103 | EC: 5f¹⁻¹⁴ 6d⁰⁻² 7s²</div>
+        <ul class="notes">
+          <li>All radioactive; mostly man-made</li>
+          <li>More OS than lanthanoids (+2 to +7)</li>
+          <li>Actinoid contraction &gt; Lanthanoid contraction</li>
+          <li>IE of early actinoids &lt; early lanthanoids</li>
+          <li>Highly reactive; react with boiling water</li>
+          <li>Magnetic behaviour more complex</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<!-- SECTION 5: p-BLOCK -->
+<!-- ═══════════════════════════════════════════════════════ -->
+<div id="pb">
+  <div class="sec-header">
+    <div class="sec-icon" style="background:rgba(244,114,182,0.12); color:var(--accent5);">🌡️</div>
+    <div class="sec-title" style="color:var(--accent5)">5. p-BLOCK ELEMENTS</div>
+    <div class="sec-tag" style="background:rgba(244,114,182,0.1); color:var(--accent5); border:1px solid rgba(244,114,182,0.2)">~2 Qs/paper</div>
+  </div>
+
+  <div class="grid">
+    <!-- Grp 13 -->
+    <div class="card card-b5">
+      <div class="card-title" style="color:var(--accent5)">Ⅲ Group 13 – Boron Family</div>
+      <ul class="notes">
+        <li><b>Size:</b> B &lt; Al &gt; Ga &lt; In &lt; Tl</li>
+        <li><b>IE:</b> B &gt; Tl &gt; Ga &gt; Al &gt; In</li>
+        <li><b>IPE:</b> Tl stable in +1; Pb stable in +2; Bi stable in +3</li>
+        <li>Tl⁺³, Pb⁴⁺, Bi⁵⁺ → good oxidising agents</li>
+      </ul>
+      <div class="alert alert-imp">
+        <div class="alert-icon">🔴</div>
+        <div><b>Back Bonding (BF₃):</b> 2p-2p back bond → BO↑, BL↓<br>
+        <b>BF₃ order:</b> Lewis acidity: BI₃ &gt; BBr₃ &gt; BCl₃ &gt; BF₃<br>
+        B-F bond length: BF₃ &lt; BF₄⁻ (back bond reduces in BF₄⁻)</div>
+      </div>
+      <ul class="notes">
+        <li><b>B₂H₆:</b> 3c-2e bonds (banana bonds); 2 bridge H; sp³ at B</li>
+        <li><b>Al₂Cl₆:</b> 3c-4e bridge bonds; sp³ at Al</li>
+        <li>Borax (Na₂B₄O₇·10H₂O) → slightly alkaline + acidic buffer</li>
+      </ul>
+    </div>
+
+    <!-- Grp 14 -->
+    <div class="card card-b5">
+      <div class="card-title" style="color:var(--accent5)">Ⅳ Group 14 – Carbon Family</div>
+      <ul class="notes">
+        <li><b>Catenation:</b> C &gt; Si &gt; Ge ≈ Sn; Pb = 0</li>
+        <li><b>IE:</b> C &gt; Si &gt; Ge &gt; Sn &lt; Pb</li>
+      </ul>
+      <div class="tbl-wrap">
+        <table>
+          <tr><th>Property</th><th>Diamond</th><th>Graphite</th><th>C₆₀</th></tr>
+          <tr><td>Hybrid</td><td>sp³</td><td>sp²</td><td>sp²</td></tr>
+          <tr><td>Structure</td><td>Tetrahedral</td><td>Hexagonal layers</td><td>32 rings</td></tr>
+          <tr><td>Bond length</td><td>1.54 Å</td><td>1.41 Å</td><td>–</td></tr>
+          <tr><td>Stability</td><td>Kinetic</td><td>Thermodynamic</td><td>Purest</td></tr>
+        </table>
+      </div>
+      <ul class="notes">
+        <li>CCl₄ → no hydrolysis (no vacant orbital on C)</li>
+        <li>PbI₄ does not exist at room temperature</li>
+        <li><b>Carbides:</b> Be₂C/Al₄C₃→CH₄ | CaC₂→C₂H₂ | Mg₂C₃→C₃H₄</li>
+      </ul>
+    </div>
+
+    <!-- Grp 15 -->
+    <div class="card card-b5">
+      <div class="card-title" style="color:var(--accent5)">Ⅴ Group 15 – Nitrogen Family</div>
+      <ul class="notes">
+        <li>Nitrogen: anomalous (small size, high EN, pπ-pπ bonding)</li>
+        <li>N: does NOT form pentahalide (no d-orbital)</li>
+        <li>NF₃ = only stable trihalide of N</li>
+        <li>BiF₅ = only pentahalide of Bi</li>
+        <li>HNO₂ disproportionates in acidic medium → HNO₃ + NO</li>
+        <li>P disproportionates in all intermediate OS (acid + base)</li>
+      </ul>
+      <div class="alert alert-warn">
+        <div class="alert-icon">⚠️</div>
+        <div><b>Reducing nature of hydrides:</b> NH₃ &lt; PH₃ &lt; AsH₃ &lt; SbH₃<br>
+        <b>Acid strength:</b> NH₃ &lt; PH₃ &lt; AsH₃ &lt; SbH₃<br>
+        <b>Basic strength:</b> NH₃ &gt; PH₃ &gt; AsH₃ &gt; SbH₃</div>
+      </div>
+    </div>
+
+    <!-- Grp 16 -->
+    <div class="card card-b5">
+      <div class="card-title" style="color:var(--accent5)">Ⅵ Group 16 – Oxygen Family (Chalcogens)</div>
+      <ul class="notes">
+        <li>O: only −2 to +2 OS (no d-orbital)</li>
+        <li>S, Se, Te: +4 and +6 with O and F only</li>
+        <li><b>Stability of +6 OS:</b> ↓ down group; +4 OS: ↑ down group</li>
+        <li>S₂ = paramagnetic (vapour phase, high T)</li>
+        <li>Allotropes: Rhombic (α-S, stable &lt;95.6°C) & Monoclinic (β-S, stable &gt;95.6°C)</li>
+        <li>Transition temperature = 95.6°C</li>
+      </ul>
+      <div class="alert alert-warn">
+        <div class="alert-icon">⚠️</div>
+        <div>SO₂ = reducing agent | TeO₂ = oxidising agent<br>
+        Monohalides exist as dimers: S₂F₂, S₂Cl₂, Se₂Cl₂</div>
+      </div>
+    </div>
+
+    <!-- Grp 17 -->
+    <div class="card card-b5">
+      <div class="card-title" style="color:var(--accent5)">Ⅶ Group 17 – Halogens</div>
+      <ul class="notes">
+        <li>F forms only OF₂ and O₂F₂ (F is more EN than O)</li>
+        <li><b>Stability of Oxides:</b> I &gt; Cl &gt; Br (Middle row anomaly for Br)</li>
+        <li>Br₂O, BrO₂, BrO₃ = least stable, strongest OA among halogen oxides</li>
+        <li>Halogens do NOT show catenation or allotropy</li>
+      </ul>
+      <div class="alert alert-imp">
+        <div class="alert-icon">🔴</div>
+        <div><b>Acid strength of HX:</b> HF &lt; HCl &lt; HBr &lt; HI<br>
+        <b>Reducing nature:</b> HF &lt; HCl &lt; HBr &lt; HI<br>
+        <b>Oxidising strength of halogens:</b> F₂ &gt; Cl₂ &gt; Br₂ &gt; I₂</div>
+      </div>
+      <ul class="notes">
+        <li>Colour: F₂=pale yellow, Cl₂=greenish yellow, Br₂=red-brown, I₂=violet</li>
+        <li>Bleaching powder = Ca(OCl)Cl + Ca(OH)₂·CaCl₂·2H₂O (CaCl₂·Ca(OH)₂·H₂O)</li>
+      </ul>
+    </div>
+
+    <!-- Grp 18 -->
+    <div class="card card-b5">
+      <div class="card-title" style="color:var(--accent5)">Ⅷ Group 18 – Noble Gases</div>
+      <ul class="notes">
+        <li>First noble gas compound: Xe⁺[PtF₆]⁻ (Neil Bartlett, 1962)</li>
+        <li>Concept: IP(Xe) ≈ IP(O₂)</li>
+      </ul>
+      <div class="tbl-wrap">
+        <table>
+          <tr><th>Fluoride</th><th>Conditions</th><th>Shape</th></tr>
+          <tr><td>XeF₂</td><td>Xe:F₂ = 2:1, 673K, 1 bar</td><td>Linear</td></tr>
+          <tr><td>XeF₄</td><td>Xe:F₂ = 1:5, 873K, 7 bar</td><td>Square Planar</td></tr>
+          <tr><td>XeF₆</td><td>Xe:F₂ = 1:20, 573K, 60-70 bar</td><td>Distorted Octahedral</td></tr>
+        </table>
+      </div>
+      <ul class="notes">
+        <li>Main inert gas in air = Ar | He from natural gas & pitchblende</li>
+        <li>XeF₂ hydrolysis → Xe + O₂ + HF | XeF₄ → XeO₃ + Xe + HF</li>
+        <li>XeF₆ hydrolysis → XeO₃ + HF</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Hydrolysis Rules -->
+  <div class="card card-b5" style="margin-top:14px">
+    <div class="card-title" style="color:var(--accent5)">💧 Hydrolysis – Important Reactions</div>
+    <div class="grid-3">
+      <div>
+        <div class="rxn">NCl₃ + H₂O → NH₃ + HOCl<br>PCl₃ + H₂O → H₃PO₃ + HCl<br>AsCl₃ → H₃AsO₃ + HCl</div>
+        <div class="rxn">SF₆ + H₂O → <b>No hydrolysis</b> (crowding)<br>CCl₄ → <b>No hydrolysis</b> (no vacant orbital)</div>
+      </div>
+      <div>
+        <div class="rxn">BF₃ → <b>partial</b>: 4BF₃ + 3H₂O → 3H[BF₄] + B(OH)₃<br>SiF₄ → <b>partial</b>: 3SiF₄ + 4H₂O → 2H₂SiF₆ + H₄SiO₄<br>SiCl₄ → <b>complete</b> → Si(OH)₄ + HCl</div>
+      </div>
+      <div>
+        <div class="rxn">Interhalogen: AX + H₂O → HX + HOA<br>AX₃ → 3HX + HAO₂<br>AX₅ → 5HX + HAO₃<br>AX₇ → 7HX + HAO₄</div>
+        <div class="rxn">Borax: Na₂B₄O₇ + 7H₂O → 2Na[B(OH)₄] + 2H₃BO₃<br>(Partial hydrolysis; alkaline → acidic buffer)</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Oxyacids -->
+  <div class="card card-b5" style="margin-top:14px">
+    <div class="card-title" style="color:var(--accent5)">⚡ Oxyacids – Reducing Nature & Basicity</div>
+    <div class="two-col">
+      <div>
+        <ul class="notes">
+          <li><b>Reducing nature ∝ P-H bonds:</b> H₃PO₂ (2) &gt; H₃PO₃ (1) &gt; H₃PO₄ (0)</li>
+          <li><b>Basicity:</b> H₃PO₂ = 1 | H₃PO₃ = 2 | H₃PO₄ = 3</li>
+          <li><b>Acid strength (same central atom):</b> ↑ OS → ↑ acid strength<br>HClO &lt; HClO₂ &lt; HClO₃ &lt; HClO₄</li>
+        </ul>
+      </div>
+      <div>
+        <ul class="notes">
+          <li><b>Bleaching agents (Oxidation):</b> O₃, H₂O₂ (with moisture), Cl₂ (with moisture), Bleaching powder → Permanent bleach</li>
+          <li><b>Bleaching agent (Reduction):</b> SO₂ (with moisture) → Temporary bleach</li>
+          <li>Mixed anhydride: N₂O₄ → HNO₂ + HNO₃; Cl₂O₆ → HClO₃ + HClO₄</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- ═══════════════════════════════════════════════════════ -->
+<!-- SECTION 6: SALT ANALYSIS -->
+<!-- ═══════════════════════════════════════════════════════ -->
+<div id="sa">
+  <div class="sec-header">
+    <div class="sec-icon" style="background:rgba(250,204,21,0.12); color:var(--accent6);">🔬</div>
+    <div class="sec-title" style="color:var(--accent6)">6. SALT ANALYSIS</div>
+    <div class="sec-tag" style="background:rgba(250,204,21,0.1); color:var(--accent6); border:1px solid rgba(250,204,21,0.2)">~1 Q/paper</div>
+  </div>
+
+  <!-- Anion Tests -->
+  <div class="card card-b6">
+    <div class="card-title" style="color:var(--accent6)">🧪 Anion Tests – Class A (Volatile with H₂SO₄)</div>
+    <div class="two-col">
+      <div>
+        <div class="trend-title">Sub-group I (Dilute H₂SO₄)</div>
+        <div class="flow-group">
+          <div class="flow-row">
+            <div class="flow-ion">CO₃²⁻</div>
+            <div class="flow-reagent">dil. H⁺</div>
+            <div class="flow-obs">CO₂↑ (colourless, brisk effervescence) | Turns lime water milky</div>
+          </div>
+          <div class="flow-row">
+            <div class="flow-ion">SO₃²⁻</div>
+            <div class="flow-reagent">dil. H⁺</div>
+            <div class="flow-obs">SO₂ (colourless, suffocating smell, burning sulphur)</div>
+          </div>
+          <div class="flow-row">
+            <div class="flow-ion">S²⁻</div>
+            <div class="flow-reagent">dil. H⁺</div>
+            <div class="flow-obs">H₂S (rotten egg smell) | Na₂[Fe(CN)₅NO] + S²⁻ → violet/purple</div>
+          </div>
+          <div class="flow-row">
+            <div class="flow-ion">NO₂⁻</div>
+            <div class="flow-reagent">dil. H⁺</div>
+            <div class="flow-obs">NO₂ (reddish brown) | Brown Ring test | Starch + I⁻ → blue</div>
+          </div>
+          <div class="flow-row">
+            <div class="flow-ion">CH₃COO⁻</div>
+            <div class="flow-reagent">dil. H⁺</div>
+            <div class="flow-obs">CH₃COOH (vinegar smell)</div>
+          </div>
+          <div class="flow-row">
+            <div class="flow-ion">C₂O₄²⁻</div>
+            <div class="flow-reagent">dil. H⁺</div>
+            <div class="flow-obs">CO + CO₂ mixture</div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="trend-title">Sub-group II (Conc. H₂SO₄)</div>
+        <div class="flow-group">
+          <div class="flow-row">
+            <div class="flow-ion">Cl⁻</div>
+            <div class="flow-reagent">Conc. H₂SO₄</div>
+            <div class="flow-obs">HCl (colourless, pungent) | AgNO₃ → white ppt (soluble in NH₃) | Chromyl chloride test (reddish-orange CrO₂Cl₂)</div>
+          </div>
+          <div class="flow-row">
+            <div class="flow-ion">Br⁻</div>
+            <div class="flow-reagent">Conc. H₂SO₄</div>
+            <div class="flow-obs">Br₂ (red-brown) | Layer test with CCl₄/CS₂</div>
+          </div>
+          <div class="flow-row">
+            <div class="flow-ion">I⁻</div>
+            <div class="flow-reagent">Conc. H₂SO₄</div>
+            <div class="flow-obs">I₂ (violet) | Starch → blue-black | Layer test</div>
+          </div>
+          <div class="flow-row">
+            <div class="flow-ion">NO₃⁻</div>
+            <div class="flow-reagent">Conc. H₂SO₄ + Cu</div>
+            <div class="flow-obs">NO₂ (reddish brown) | Brown Ring test (same as NO₂⁻)</div>
+          </div>
+        </div>
+        <div class="alert alert-warn">
+          <div class="alert-icon">⚠️</div>
+          <div><b>Chromyl chloride test fails for:</b> AgCl, Cu₂Cl₂, CCl₄, CHCl₃, HgCl₂, Hg₂Cl₂, PbCl₂, PbCl₄</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Class B Anions -->
+  <div class="card card-b6" style="margin-top:14px">
+    <div class="card-title" style="color:var(--accent6)">Class B Anions (No volatile product with H₂SO₄)</div>
+    <div class="two-col">
+      <div>
+        <div class="trend-title">Sub-group I (By ppt)</div>
+        <div class="flow-group">
+          <div class="flow-row"><div class="flow-ion">SO₄²⁻</div><div class="flow-reagent">BaCl₂ + HCl</div><div class="flow-obs">White ppt BaSO₄ (insoluble in HCl)</div></div>
+          <div class="flow-row"><div class="flow-ion">PO₄³⁻</div><div class="flow-reagent">Amm. Molybdate</div><div class="flow-obs">Yellow ppt (ammonium phosphomolybdate)</div></div>
+        </div>
+      </div>
+      <div>
+        <div class="trend-title">Sub-group II (Redox tests)</div>
+        <div class="flow-group">
+          <div class="flow-row"><div class="flow-ion">Cr₂O₇²⁻</div><div class="flow-reagent">Acidic medium</div><div class="flow-obs">Orange → Green when reduced</div></div>
+          <div class="flow-row"><div class="flow-ion">MnO₄⁻</div><div class="flow-reagent">Reducing agent</div><div class="flow-obs">Purple → colourless/brown</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Cation Groups -->
+  <div class="card card-b6" style="margin-top:14px">
+    <div class="card-title" style="color:var(--accent6)">⚗️ Cation Groups – Systematic Analysis</div>
+    <div class="tbl-wrap">
+      <table>
+        <tr><th>Group</th><th>Cations</th><th>Reagent</th><th>Precipitate</th><th>Colour</th></tr>
+        <tr><td>0</td><td>NH₄⁺</td><td>NaOH (warm)</td><td>NH₃ gas (smell + moist litmus)</td><td>–</td></tr>
+        <tr><td>I</td><td>Ag⁺, Hg₂²⁺, Pb²⁺</td><td>dil. HCl</td><td>AgCl, Hg₂Cl₂, PbCl₂</td><td>White</td></tr>
+        <tr><td>IIA</td><td>Pb²⁺, Cu²⁺, Bi³⁺, Hg²⁺, Cd²⁺</td><td>H₂S/H⁺</td><td>PbS, CuS, Bi₂S₃, HgS, CdS</td><td>Black/Yellow(Cd)</td></tr>
+        <tr><td>IIB</td><td>As³⁺/⁵⁺, Sb³⁺/⁵⁺, Sn²⁺/⁴⁺</td><td>H₂S/H⁺</td><td>As₂S₃/₅, Sb₂S₃/₅, SnS/SnS₂</td><td>Yellow/Orange</td></tr>
+        <tr><td>III</td><td>Fe³⁺, Cr³⁺, Al³⁺</td><td>NH₄Cl + NH₄OH</td><td>Fe(OH)₃, Cr(OH)₃, Al(OH)₃</td><td>Brown/Green/White</td></tr>
+        <tr><td>IV</td><td>Ni²⁺, Co²⁺, Mn²⁺, Zn²⁺</td><td>H₂S/OH⁻</td><td>NiS, CoS, MnS, ZnS</td><td>Black/Pink/Buff/White</td></tr>
+        <tr><td>V</td><td>Ba²⁺, Sr²⁺, Ca²⁺</td><td>(NH₄)₂CO₃ + NH₄OH</td><td>BaCO₃, SrCO₃, CaCO₃</td><td>White</td></tr>
+        <tr><td>VI</td><td>Na⁺, K⁺, Mg²⁺</td><td>Flame test / specific</td><td>–</td><td>Yellow/Lilac/–</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <!-- Specific Tests -->
+  <div class="card card-b6" style="margin-top:14px">
+    <div class="card-title" style="color:var(--accent6)">🎯 Specific Confirmatory Tests (High Yield)</div>
+    <div class="grid-3">
+      <div>
+        <div class="trend-title">Fe³⁺</div>
+        <div class="rxn">K₄[Fe(CN)₆] → Fe₄[Fe(CN)₆]₃ (Prussian Blue)<br>SCN⁻ → Fe(SCN)₃ (Blood Red)</div>
+        <div class="trend-title">Fe²⁺</div>
+        <div class="rxn">K₃[Fe(CN)₆] → Fe₃[Fe(CN)₆]₂ (Turnbull's Blue)<br>DMG → no reaction</div>
+        <div class="trend-title">Cu²⁺</div>
+        <div class="rxn">NH₄OH (excess) → [Cu(NH₃)₄]²⁺ (deep blue)<br>K₄[Fe(CN)₆] → Cu₂[Fe(CN)₆]↓ (chocolate)</div>
+      </div>
+      <div>
+        <div class="trend-title">Ni²⁺</div>
+        <div class="rxn">DMG (dmg⁻¹) + NH₄OH → [Ni(dmg)₂] (rosy red ppt)</div>
+        <div class="trend-title">Al³⁺</div>
+        <div class="rxn">Excess NaOH → Na[Al(OH)₄] (soluble)<br>Lake test → Al(OH)₃ + litmus → blue floating ppt</div>
+        <div class="trend-title">Zn²⁺</div>
+        <div class="rxn">NaOH: Zn(OH)₂ → excess NaOH → Na₂[Zn(OH)₄]<br>K₄[Fe(CN)₆] → Zn₂[Fe(CN)₆]↓ (white)</div>
+      </div>
+      <div>
+        <div class="trend-title">Ba²⁺ vs Ca²⁺</div>
+        <div class="rxn">Ba²⁺: Flame → Apple green | K₂CrO₄ → BaCrO₄ (yellow, insoluble in CH₃COOH)<br>Ca²⁺: Flame → Brick red | (NH₄)₂C₂O₄ → CaC₂O₄ (white)</div>
+        <div class="trend-title">NH₄⁺</div>
+        <div class="rxn">NaOH (warm) → NH₃↑<br>Nessler's K₂[HgI₄]+KOH → brown ppt</div>
+        <div class="trend-title">Pb²⁺</div>
+        <div class="rxn">Na₂SO₄ → PbSO₄↓ (white)<br>Na₂CrO₄ → PbCrO₄↓ (yellow)</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Dry Tests -->
+  <div class="card card-b6" style="margin-top:14px">
+    <div class="card-title" style="color:var(--accent6)">🔥 Dry Tests – Flame & Borax Bead</div>
+    <div class="two-col">
+      <div>
+        <div class="trend-title">Flame Test Colours</div>
+        <div class="tbl-wrap">
+          <table>
+            <tr><th>Metal</th><th>Flame Colour</th></tr>
+            <tr><td>Li</td><td>Crimson Red</td></tr>
+            <tr><td>Na</td><td>Golden Yellow</td></tr>
+            <tr><td>K</td><td>Lilac/Violet</td></tr>
+            <tr><td>Rb</td><td>Red-Violet</td></tr>
+            <tr><td>Cs</td><td>Blue</td></tr>
+            <tr><td>Ca</td><td>Brick Red</td></tr>
+            <tr><td>Sr</td><td>Crimson Red</td></tr>
+            <tr><td>Ba</td><td>Apple Green</td></tr>
+            <tr><td>Cu²⁺</td><td>Blue-Green</td></tr>
+            <tr><td>BO₃³⁻</td><td>Green Edge</td></tr>
+          </table>
+        </div>
+      </div>
+      <div>
+        <div class="trend-title">Borax Bead Test</div>
+        <div class="tbl-wrap">
+          <table>
+            <tr><th>Ion</th><th>Oxidising (Cold)</th><th>Reducing (Hot)</th></tr>
+            <tr><td>Cu²⁺</td><td>Blue</td><td>Red opaque (Cu)</td></tr>
+            <tr><td>Co²⁺</td><td>Blue</td><td>Blue</td></tr>
+            <tr><td>Ni²⁺</td><td>Brown</td><td>–</td></tr>
+            <tr><td>Cr³⁺</td><td>Green</td><td>–</td></tr>
+            <tr><td>Mn²⁺</td><td>Pink/violet</td><td>–</td></tr>
+          </table>
+        </div>
+        <div class="trend-title" style="margin-top:10px">Charcoal Cavity Test</div>
+        <ul class="notes">
+          <li>White (cold) + Yellow (hot) → Zn²⁺</li>
+          <li>Brown → Cd²⁺</li>
+          <li>White + Garlic smell → As³⁺</li>
+          <li>Co(NO₃)₂: Rinmann's Green = Zn²⁺; Thenard's Blue = Al³⁺; Pink = Mg²⁺</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<div style="text-align:center; padding:40px 20px 30px; color:var(--muted); font-size:12px; border-top:1px solid var(--border); margin-top:40px;">
+  <div style="font-family:'Rajdhani',sans-serif; font-size:16px; color:var(--accent); font-weight:700; margin-bottom:8px;">⚡ NEET 2026 – YOU'VE GOT THIS!</div>
+  <div>Cover each section in the order: Periodic Table → Bonding → Coordination → d&f Block → p-Block → Salt Analysis</div>
+  <div style="margin-top:6px;">Focus on exceptions and orders — NEET loves these!</div>
+</div>
+
+</div><!-- end container -->
+</body>
+</html>
